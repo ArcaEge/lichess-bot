@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import json
 from stockfish import Stockfish
@@ -21,7 +23,7 @@ def game(response):
     else:
         requests.post('https://lichess.org/api/challenge/' + response['challenge']['id'] + '/decline', headers=headers)
         return
-    stockfish = Stockfish("stockfish_20090216_x64_avx2")
+    stockfish = Stockfish("./stockfish_20090216_x64_avx2")
     challengeId = response['challenge']['id']
     isWhite = False
     isTurn = False
